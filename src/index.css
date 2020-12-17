@@ -119,6 +119,18 @@ body {
   color: white;
 }
 
+/* ----------------------------------------- Modal -------------------------- */
+
+.modal-content {
+  background-color: rgb(30, 30, 30) !important;
+}
+
+.btn-tag{
+  padding: 7px 30px;
+  color: white;
+  background-color: #BB86FC;
+}
+
 /* -------------------------------------- task List ----------------------- */
 
 .card{
