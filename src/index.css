@@ -1,7 +1,19 @@
 body {
   background-color: #292929;
+  color: white;
 }
 
 .nav-bg{
   background-color: #1F1F1F;
+}
+
+/* for input */
+.inpt{
+  background-color: #413D46;
+  outline: none;
+  border:none;
+}
+
+.inpt::placeholder{
+  color: #D9D8DA;
 }

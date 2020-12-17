@@ -1,12 +1,15 @@
 import React from "react";
 import Header from './components/layout/header';
+import AddTask from './components/addTask';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header/>
-      <button className='btn btn-primary'>HI</button>
-    </div>
+      <div className='container'>
+        <AddTask/>
+      </div>
+    </>
   );
 }
 
