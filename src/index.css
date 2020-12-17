@@ -1,10 +1,10 @@
 body {
-  background-color: #292929;
+  background-color: #121212;
   color: white;
 }
 
 .nav-bg{
-  background-color: #1F1F1F;
+  background-color: #292929;
 }
 
 /* for input */
@@ -14,6 +14,83 @@ body {
   border:none;
 }
 
+.inpt:focus{
+  background-color: #413D46;
+  outline: none;
+  border:none;
+  color: white;
+  -webkit-box-shadow: none;
+}
+
 .inpt::placeholder{
   color: #D9D8DA;
+}
+
+/*---------------------------------------------- add task -------------------------------------------------------- */
+.add-task{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: space-evenly;
+  width: 70%;
+  align-items: center;
+}
+
+.task-input{
+  width: 50% !important;
+}
+
+.task-inpt{
+  display: block;
+  margin: auto;
+  padding: 1rem;
+  background-color: rgb(30, 30, 30);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.task-inpt:focus{
+  background-color: rgb(30, 30, 30);
+  border: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none;
+  color: white;
+}
+
+.tag{
+  padding: 5px 20px;
+  color: white;
+  border: none;
+  outline: none !important;
+  background-color: transparent;
+}
+
+.tag:hover{
+  background-color: #292929;
+}
+
+.tag:focus{
+  border: none;
+  outline: none !important;
+  -webkit-box-shadow: none;
+}
+
+.time{
+  padding-top: 20px;
+}
+
+
+/* -------------------------------------- task List ----------------------- */
+
+.card{
+  background-color: rgb(30, 30, 30) !important;
+  border-radius:10px ;
+}
+
+.table td,th{
+  color: white;
+  border-color: #423D46 !important;
 }
