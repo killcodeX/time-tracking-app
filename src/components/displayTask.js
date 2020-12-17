@@ -2,7 +2,7 @@ import React from "react";
 
 export default function displayTask() {
   return (
-    <div className="card mt-5">
+    <div className="card display-card mt-5">
       <table class="table">
         <thead>
           <tr>

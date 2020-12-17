@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
+import Tags from './tags';
 
 export default function AddTask() {
+
+    const [show, setShow] = useState(false);
+
   return (
     <div className="add-task">
       <div className="input-group task-input">
@@ -10,7 +14,8 @@ export default function AddTask() {
           placeholder="Enter Task"
         />
       </div>
-      <button className='tag'><i className="fas fa-plus"></i> <span className='ml-2'>Tag</span></button>
+      <button className='tag' onClick={() => setShow(!show)}><i className="fas fa-plus"></i> <span className='ml-2'>Tag</span></button>
+      { show? <Tags/>:null}
       <div className='time'>
           <p>0:00:00 <i class="fas fa-play"></i></p>
       </div>
