@@ -3,7 +3,7 @@
 function App() {
   return (
     <div className="App">
-      hello world
+      <button className='btn btn-primary'>HI</button>
     </div>
   );
 }
