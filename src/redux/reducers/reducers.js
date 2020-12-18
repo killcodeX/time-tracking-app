@@ -1,13 +1,8 @@
-import { AddTag, GetTask, GetTag, GetTime, GetId } from "../actions/actionConstants";
+import { AddTag, AddTask, DeleteTask } from "../actions/actionConstants";
 
 const initialState = {
   Tasks: [],
   Tags: [],
-  id: 0,
-  task: "",
-  tag: "",
-  StartingTime: "0:00:00",
-  EndTime: "0:00:00",
 };
 
 // Reducers
@@ -19,27 +14,17 @@ const TaskReducer = (state = initialState, action) => {
         Tags: [action.payload, ...state.Tags],
       };
 
-    case GetTask:
+    case AddTask:
       return {
         ...state,
-        task: action.payload,
+        Tasks: [action.payload, ...state.Tasks],
       };
 
-    case GetTag:
+      case DeleteTask:
       return {
         ...state,
-        tag: action.payload,
+        Tasks: state.Tasks.filter((task) => task.id !== action.payload),
       };
-    case GetTime:
-      return {
-        ...state,
-        EndTime: action.payload,
-      };
-      case GetId:
-        return {
-          ...state,
-          id: action.payload,
-        };
 
     default:
       return state;

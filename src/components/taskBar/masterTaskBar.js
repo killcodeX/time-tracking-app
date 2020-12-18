@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import AddTask from "./addTask";
 import Tags from "./tags";
 import TimeStamp from "./timeStamp";
+import {useDispatch} from 'react-redux';
+import {addTask} from '../../redux/actions/actions';
 
 export default function MasterTaskBar() {
+    const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [taskName, setTaskName] = useState("");
   const [selectTag, setSelectTag] = useState("");
@@ -11,7 +14,18 @@ export default function MasterTaskBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(taskName, selectTag, time);
+    let data = {
+        id: Math.floor(Math.random() * 100) + 1,
+        task: taskName,
+        tag: selectTag,
+        timeStamp:time
+    }
+
+    dispatch(addTask(data))
+
+    setTaskName("")
+    setSelectTag("")
+    setTime("");
   };
 
   return (

@@ -1,5 +1,5 @@
   
-import {AddTag, GetTask, GetTag, GetTime, GetId} from './actionConstants';
+import {AddTag, AddTask, DeleteTask} from './actionConstants';
 
 // actions
 export const addTag = (tag) => {
@@ -9,30 +9,17 @@ export const addTag = (tag) => {
     };
   };
 
-export const getTask = (task) => {
+export const addTask = (task) => {
   return {
-    type: GetTask,
+    type: AddTask,
     payload: task,
   };
 };
 
-export const getTag = (tag) => {
+export const deleteTask = (id) => {
+  //console.log('ii')
   return {
-    type: GetTag,
-    payload: tag,
-  };
-};
-
-export const getTime = (time) => {
-  return {
-    type: GetTime,
-    payload: time,
-  };
-};
-
-export const getTid = (id) => {
-  return {
-    type: GetId,
+    type: DeleteTask,
     payload: id,
   };
 };

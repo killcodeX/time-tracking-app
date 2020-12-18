@@ -6,7 +6,6 @@ export default function TimeStamp({value, onchange}) {
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const countRef = useRef(null);
-  const [time, setTime] = useState(null);
 
   const handleStart = () => {
     setIsActive(true);
