@@ -1,3 +1,3 @@
 // actions contsants
 
-export const Add = "ADD_CONTACT";
+export const Add = "ADD_TAG";

@@ -1,9 +1,9 @@
-import React, {useState} from "react";
-import Tags from './tags';
+import React, { useState } from "react";
+import Tags from "./tags";
+import TimeStamp from "./timeStamp";
 
 export default function AddTask() {
-
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
   return (
     <div className="add-task">
@@ -14,11 +14,11 @@ export default function AddTask() {
           placeholder="Enter Task"
         />
       </div>
-      <button className='tag' onClick={() => setShow(!show)}><i className="fas fa-plus"></i> <span className='ml-2'>Tag</span></button>
-      { show? <Tags/>:null}
-      <div className='time'>
-          <p>0:00:00 <i class="fas fa-play"></i></p>
-      </div>
+      <button className="tag" onClick={() => setShow(!show)}>
+        <i className="fas fa-plus"></i> <span className="ml-2">Tag</span>
+      </button>
+      {show ? <Tags /> : null}
+      <TimeStamp />
     </div>
   );
 }

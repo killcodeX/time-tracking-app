@@ -1,17 +1,18 @@
 import { Add } from "../actions/actionConstants";
 
 const initialState = {
-  
+  Tasks:[],
+  Tags: []
 };
 
 // Reducers
 const TaskReducer = (state = initialState, action) => {
   switch (action.type) {
-    // case Add:
-    //   return {
-    //     ...state,
-    //     contacts: [action.payload, ...state.contacts],
-    //   };
+    case Add:
+      return {
+        ...state,
+        Tags: [action.payload, ...state.Tags],
+      };
 
     // case GET:
     //   let arr = state.contacts.filter(

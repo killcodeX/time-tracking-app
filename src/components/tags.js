@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import {addTag} from '../redux/actions/actions';
 
 export default function Tags() {
-  const tag = [];
+  const dispatch = useDispatch();
+  const tags = useSelector((state) => state.Tasks.Tags);
   const [show, setShow] = useState(false);
   const [newTag, setNewTag] = useState("");
 
@@ -11,20 +14,20 @@ export default function Tags() {
 
   const handleNewTag = (e) => {
     e.preventDefault();
-    alert(newTag);
+    dispatch(addTag(newTag));
+    setNewTag('');
+    setShow(false)
   };
+
+
   return (
     <>
       <div className="tag-card text-center">
-        <div className="input-group tag-input">
-          <input
-            type="text"
-            className="form-control tag-inpt"
-            placeholder="Search Tag"
-          />
-        </div>
-        <hr className="hr" />
-        {tag.length > 0 ? "tag" : <p className="text-muted">No Tag</p>}
+        {tags.length > 0 ? (
+            tags.map((tag,i) => {
+                return <p class='btn-tag' key={i}>{tag}</p>
+            })
+        ) : <p className="text-muted">No Tag</p>}
         <hr className="hr" />
         <button className="tag" onClick={handleShow}>
           <i className="fas fa-plus"></i> Add Tag

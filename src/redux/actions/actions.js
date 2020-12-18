@@ -1,13 +1,11 @@
   
-import {Add} from './actionContants';
-
-
+import {Add} from './actionConstants';
 
 // actions
-export const addContact = (contact) => {
+export const addTag = (tag) => {
     return {
-      type: Add ,
-      payload: contact,
+      type: Add,
+      payload: tag,
     };
   };
 
