@@ -131,6 +131,36 @@ body {
   background-color: #BB86FC;
 }
 
+/* --------------------------------------- Timer ------------------------------- */
+
+.time{
+  display: flex;
+  flex-direction: row;
+}
+
+.buttons button{
+  background: transparent;
+  background: transparent;
+  border: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none;
+}
+
+.buttons button:focus{
+  background: transparent;
+  border: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none;
+}
+
+.btn-play{
+  color: #26C495 !important;
+}
+
+.btn-stop{
+  color: #FF4B4D !important;
+}
+
 /* -------------------------------------- task List ----------------------- */
 
 .card{

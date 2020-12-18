@@ -47,16 +47,16 @@ export default function TimeStamp() {
       <p>
       {formatTime()}
       </p>
-      <div className="buttons">
+      <div className="buttons ml-3">
       {
             !isActive && !isPaused ?
               <button onClick={handleStart}><i class="btn-play fas fa-play"></i></button>
               : (
                 isPaused ? <button onClick={handlePause}><i class="fas fa-pause"></i></button> :
-                  <button onClick={handleResume}><i class="btn-play fas fa-play"></i></button>
+                  <button onClick={handleResume}><i class="fas fa-pause"></i></button>
               )
           }
-          <button onClick={handleReset} disabled={!isActive}><i class="btn-stop fas fa-stop"></i></button>
+          <button className='ml-3' onClick={handleReset} disabled={!isActive}><i class="btn-stop fas fa-stop"></i></button>
       </div>
     </div>
   );
