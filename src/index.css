@@ -129,6 +129,7 @@ body {
   padding: 7px 30px;
   color: white;
   background-color: #BB86FC;
+  cursor: pointer;
 }
 
 /* --------------------------------------- Timer ------------------------------- */

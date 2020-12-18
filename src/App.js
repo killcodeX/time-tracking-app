@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/layout/header";
-import AddTask from "./components/addTask";
+import MasterTaskBar from './components/taskBar/masterTaskBar';
 import DisplayTask from "./components/displayTask";
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -10,7 +10,7 @@ function App() {
     <Provider store={store}>
       <Header />
       <div className="container">
-        <AddTask />
+        <MasterTaskBar />
         <hr className="hr" />
         <DisplayTask />
       </div>

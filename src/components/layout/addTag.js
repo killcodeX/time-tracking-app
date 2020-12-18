@@ -1,39 +1,28 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import {addTag} from '../redux/actions/actions';
+import {useDispatch} from 'react-redux';
+import {addTag} from '../../redux/actions/actions'
 
-export default function Tags() {
+export default function AddTag() {
   const dispatch = useDispatch();
-  const tags = useSelector((state) => state.Tasks.Tags);
   const [show, setShow] = useState(false);
   const [newTag, setNewTag] = useState("");
 
+  // for modal
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const handleNewTag = (e) => {
     e.preventDefault();
-    dispatch(addTag(newTag));
+    dispatch(addTag(newTag))
     setNewTag('');
-    setShow(false)
+    setShow(false);
   };
-
-
   return (
     <>
-      <div className="tag-card text-center">
-        {tags.length > 0 ? (
-            tags.map((tag,i) => {
-                return <p class='btn-tag' key={i}>{tag}</p>
-            })
-        ) : <p className="text-muted">No Tag</p>}
-        <hr className="hr" />
-        <button className="tag" onClick={handleShow}>
-          <i className="fas fa-plus"></i> Add Tag
-        </button>
-      </div>
-
+      <button className="tag mr-3" onClick={handleShow}>
+        <i className="fas fa-plus"></i> Add New Tag
+      </button>
       <Modal show={show} onHide={handleClose} style={{ color: "white" }}>
         <Modal.Header closeButton>
           <Modal.Title>Add New Tag</Modal.Title>
