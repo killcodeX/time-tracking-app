@@ -3,45 +3,45 @@ body {
   color: white;
 }
 
-.nav-bg{
+.nav-bg {
   background-color: #292929;
 }
 
 /* for input */
-.inpt{
-  background-color: #413D46;
+.inpt {
+  background-color: #413d46;
   outline: none;
-  border:none;
+  border: none;
 }
 
-.inpt:focus{
-  background-color: #413D46;
+.inpt:focus {
+  background-color: #413d46;
   outline: none;
-  border:none;
+  border: none;
   color: white;
   -webkit-box-shadow: none;
 }
 
-.inpt::placeholder{
-  color: #D9D8DA;
+.inpt::placeholder {
+  color: #d9d8da;
 }
 
 /*---------------------------------------------- add task -------------------------------------------------------- */
-.add-task{
+.add-task {
   position: relative;
   left: 50%;
   transform: translate(-50%);
   display: flex;
   justify-content: space-evenly;
-  width: 70%;
+  width: 90%;
   align-items: center;
 }
 
-.task-input{
+.task-input {
   width: 50% !important;
 }
 
-.task-inpt{
+.task-inpt {
   display: block;
   margin: auto;
   padding: 1rem;
@@ -52,7 +52,7 @@ body {
   font-size: 1.2rem;
 }
 
-.task-inpt:focus{
+.task-inpt:focus {
   background-color: rgb(30, 30, 30);
   border: none !important;
   outline: none !important;
@@ -60,7 +60,7 @@ body {
   color: white;
 }
 
-.tag{
+.tag {
   padding: 5px 20px;
   color: white;
   border: none;
@@ -68,17 +68,17 @@ body {
   background-color: transparent;
 }
 
-.tag:hover{
+.tag:hover {
   background-color: #292929;
 }
 
-.tag:focus{
+.tag:focus {
   border: none;
   outline: none !important;
   -webkit-box-shadow: none;
 }
 
-.time{
+.time {
   padding-top: 20px;
 }
 
@@ -86,32 +86,32 @@ body {
 .hr {
   height: 0.5px;
   width: 90%;
-  background: #534B5E;
+  background: #534b5e;
 }
 
-.tag-card{
+.tag-card {
   position: absolute;
   top: 90%;
-  left:60%;
+  left: 60%;
   padding: 10px;
   z-index: 1;
   display: flex;
   flex-direction: column;
   background-color: rgb(30, 30, 30);
-  border: 1px solid #534B5E;
+  border: 1px solid #534b5e;
 }
 
-.tag-input{
-  width:100%;
+.tag-input {
+  width: 100%;
 }
 
-.tag-inpt{
-  background-color:transparent;
+.tag-inpt {
+  background-color: transparent;
   border: none;
   color: white;
 }
 
-.tag-inpt:focus{
+.tag-inpt:focus {
   background-color: rgb(30, 30, 30);
   border: none !important;
   outline: none !important;
@@ -125,21 +125,28 @@ body {
   background-color: rgb(30, 30, 30) !important;
 }
 
-.btn-tag{
+.btn-tag {
   padding: 7px 30px;
   color: white;
-  background-color: #BB86FC;
+  background-color: #bb86fc;
   cursor: pointer;
+  border: none;
+}
+
+.btn-tag :focus {
+  outline: none;
+  border: none;
+  -webkit-box-shadow: none !important;
 }
 
 /* --------------------------------------- Timer ------------------------------- */
 
-.time{
+.time {
   display: flex;
   flex-direction: row;
 }
 
-.buttons button{
+.buttons button {
   background: transparent;
   background: transparent;
   border: none !important;
@@ -147,29 +154,30 @@ body {
   -webkit-box-shadow: none;
 }
 
-.buttons button:focus{
+.buttons button:focus {
   background: transparent;
   border: none !important;
   outline: none !important;
   -webkit-box-shadow: none;
 }
 
-.btn-play{
-  color: #26C495 !important;
+.btn-play {
+  color: #26c495 !important;
 }
 
-.btn-stop{
-  color: #FF4B4D !important;
+.btn-stop {
+  color: #ff4b4d !important;
 }
 
 /* -------------------------------------- task List ----------------------- */
 
-.card{
+.card {
   background-color: rgb(30, 30, 30) !important;
   z-index: -1 !important;
-}  
+}
 
-.table td,th{
+.table td,
+th {
   color: white;
-  border-color: #423D46 !important;
+  border-color: #423d46 !important;
 }

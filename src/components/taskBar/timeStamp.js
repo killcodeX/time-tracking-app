@@ -6,6 +6,7 @@ export default function TimeStamp({value, onchange}) {
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const countRef = useRef(null);
+  const [time, setTime] = useState(null);
 
   const handleStart = () => {
     setIsActive(true);
@@ -29,11 +30,19 @@ export default function TimeStamp({value, onchange}) {
 
   const handleReset = () => {
     clearInterval(countRef.current);
-    onchange(countRef.current)
+    convertTime(timer)
     setIsActive(false);
     setIsPaused(false);
     setTimer(0);
   };
+
+  const convertTime = (tm) => {
+    const getSeconds = `0${tm % 60}`.slice(-2);
+    const minutes = `${Math.floor(tm  / 60)}`;
+    const getMinutes = `0${minutes % 60}`.slice(-2);
+    const getHours = `0${Math.floor(tm  / 3600)}`.slice(-2);
+    onchange(`${getHours} : ${getMinutes} : ${getSeconds}`)
+  }
 
   const formatTime = () => {
     const getSeconds = `0${timer % 60}`.slice(-2);
@@ -49,19 +58,19 @@ export default function TimeStamp({value, onchange}) {
       <div className="buttons ml-3">
         {!isActive && !isPaused ? (
           <button type='button' onClick={handleStart}>
-            <i class="btn-play fas fa-play"></i>
+            <i className="btn-play fas fa-play"></i>
           </button>
         ) : isPaused ? (
           <button type='button' onClick={handlePause}>
-            <i class="fas fa-pause"></i>
+            <i className="fas fa-pause"></i>
           </button>
         ) : (
           <button type='button' onClick={handleResume}>
-            <i class="btn-play fas fa-play"></i>
+            <i className="btn-play fas fa-play"></i>
           </button>
         )}
-        <button type='submit' className="ml-3" onClick={handleReset} disabled={!isActive}>
-          <i class="btn-stop fas fa-stop"></i>
+        <button type='button' className="ml-3" onClick={handleReset} disabled={!isActive}>
+          <i className="btn-stop fas fa-stop"></i>
         </button>
       </div>
     </div>

@@ -3,7 +3,7 @@ import React from "react";
 export default function displayTask() {
   return (
     <div className="card display-card mt-5">
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -19,7 +19,7 @@ export default function displayTask() {
             <td>Mark</td>
             <td>Otto</td>
             <td>8:22 PM - 8:23 PM</td>
-            <td><i class="fas fa-trash"></i></td>
+            <td><i className="fas fa-trash"></i></td>
           </tr>
         </tbody>
       </table>
