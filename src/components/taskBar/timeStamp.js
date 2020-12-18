@@ -1,9 +1,7 @@
 import React, { useState, useRef } from "react";
-import { useDispatch } from "react-redux";
 // import {getTime} from '../redux/actions/actions';
 
-export default function TimeStamp() {
-  const dispatch = useDispatch();
+export default function TimeStamp({value, onchange}) {
   const [timer, setTimer] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
@@ -31,6 +29,7 @@ export default function TimeStamp() {
 
   const handleReset = () => {
     clearInterval(countRef.current);
+    onchange(countRef.current)
     setIsActive(false);
     setIsPaused(false);
     setTimer(0);
@@ -49,19 +48,19 @@ export default function TimeStamp() {
       <p>{formatTime()}</p>
       <div className="buttons ml-3">
         {!isActive && !isPaused ? (
-          <button onClick={handleStart}>
+          <button type='button' onClick={handleStart}>
             <i class="btn-play fas fa-play"></i>
           </button>
         ) : isPaused ? (
-          <button onClick={handlePause}>
+          <button type='button' onClick={handlePause}>
             <i class="fas fa-pause"></i>
           </button>
         ) : (
-          <button onClick={handleResume}>
+          <button type='button' onClick={handleResume}>
             <i class="btn-play fas fa-play"></i>
           </button>
         )}
-        <button className="ml-3" onClick={handleReset} disabled={!isActive}>
+        <button type='submit' className="ml-3" onClick={handleReset} disabled={!isActive}>
           <i class="btn-stop fas fa-stop"></i>
         </button>
       </div>

@@ -11,17 +11,17 @@ export default function MasterTaskBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(taskName)
+    console.log(taskName, selectTag, time);
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div className="add-task">
         <AddTask value={taskName} onchange={setTaskName} />
-        <button className="tag" onClick={() => setShow(!show)}>
+        <button type='button' className="tag" onClick={() => setShow(!show)}>
           <i className="fas fa-plus"></i> Select Tag
         </button>
-        {show ? <Tags value={selectTag} onchange={ setSelectTag} /> : null}
+        {show ? <Tags value={selectTag} onchange={setSelectTag} /> : null}
         <TimeStamp value={time} onchange={setTime} />
       </div>
     </form>
