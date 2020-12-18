@@ -1,7 +1,11 @@
-import React from "react";
+import React,{useState} from "react";
 import AddTag from './addTag';
+import {useSelector} from 'react-redux';
 
 export default function Header() {
+  const state = useSelector(state => state.Tasks.Tasks);
+  const [search, setSearch] = useState('');
+
   return (
     <nav className="navbar navbar-expand-lg nav-bg mb-5">
       <div className="container">
@@ -15,6 +19,8 @@ export default function Header() {
               type="text"
               className="form-control inpt"
               placeholder="Search Task ..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
           </div>
         </div>

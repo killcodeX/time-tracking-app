@@ -24,5 +24,12 @@ export const deleteTask = (id) => {
   };
 };
 
+export const editTask = (id) => {
+  return {
+    type: DeleteTask,
+    payload: id,
+  };
+};
+
 
   
