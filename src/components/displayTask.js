@@ -27,8 +27,8 @@ export default function DisplayTask() {
                     <td>{task.task}</td>
                     <td>{task.tag}</td>
                     <td>00 : 00 : 00 - {task.timeStamp}</td>
-                    <td><a href='#' onClick={() => alert('hi')}><i class="fas fa-pen"></i></a>
-                    <a href='#' className=' ml-4' onClick={() => dispatch(deleteTask(task.id))}><i class="fas fa-trash"></i></a></td>
+                    <td><span className='icons' href='#' onClick={() => alert('hi')}><i class="fas fa-pen"></i></span>
+                    <span className='icons' className=' ml-4' onClick={() => dispatch(deleteTask(task.id))}><i class="fas fa-trash"></i></span></td>
                   </tr>
                 );
               })
