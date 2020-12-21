@@ -1,5 +1,5 @@
   
-import {AddTag, AddTask, DeleteTask} from './actionConstants';
+import {AddTag, AddTask, DeleteTask, SearchTask} from './actionConstants';
 
 // actions
 export const addTag = (tag) => {
@@ -30,6 +30,14 @@ export const editTask = (id) => {
     payload: id,
   };
 };
+
+export const searchTask = (value) => {
+  return {
+    type: SearchTask,
+    payload: value,
+  };
+};
+
 
 
   

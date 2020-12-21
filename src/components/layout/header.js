@@ -1,10 +1,14 @@
 import React,{useState} from "react";
 import AddTag from './addTag';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {searchTask} from '../../redux/actions/actions';
 
 export default function Header() {
   const state = useSelector(state => state.Tasks.Tasks);
+  const dispatch = useDispatch();
   const [search, setSearch] = useState('');
+  
+    dispatch(searchTask(search))
 
   return (
     <nav className="navbar navbar-expand-lg nav-bg mb-5">

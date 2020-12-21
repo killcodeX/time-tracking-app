@@ -5,6 +5,7 @@ import { deleteTask } from "../redux/actions/actions";
 
 export default function DisplayTask() {
   const tasks = useSelector((state) => state.Tasks.Tasks);
+  const work = useSelector((state) => state.Tasks.works);
   const dispatch = useDispatch();
   return (
     <div className="card display-card mt-5">
@@ -19,20 +20,59 @@ export default function DisplayTask() {
           </tr>
         </thead>
         <tbody>
-          {tasks.length > 0
+          {work.length < 1
             ? tasks.map((task, i) => {
                 return (
                   <tr key={i}>
-                    <td>{i+1}</td>
+                    <td>{i + 1}</td>
                     <td>{task.task}</td>
                     <td>{task.tag}</td>
                     <td>00 : 00 : 00 - {task.timeStamp}</td>
-                    <td><span className='icons' href='#' onClick={() => alert('hi')}><i class="fas fa-pen"></i></span>
-                    <span className='icons' className=' ml-4' onClick={() => dispatch(deleteTask(task.id))}><i class="fas fa-trash"></i></span></td>
+                    <td>
+                      <span
+                        className="icons"
+                        href="#"
+                        onClick={() => alert("hi")}
+                      >
+                        <i class="fas fa-pen"></i>
+                      </span>
+                      <span
+                        className="icons"
+                        className=" ml-4"
+                        onClick={() => dispatch(deleteTask(task.id))}
+                      >
+                        <i class="fas fa-trash"></i>
+                      </span>
+                    </td>
                   </tr>
                 );
               })
-            : null}
+            : work.map((task, i) => {
+                return (
+                  <tr key={i}>
+                    <td>{i + 1}</td>
+                    <td>{task.task}</td>
+                    <td>{task.tag}</td>
+                    <td>00 : 00 : 00 - {task.timeStamp}</td>
+                    <td>
+                      <span
+                        className="icons"
+                        href="#"
+                        onClick={() => alert("hi")}
+                      >
+                        <i class="fas fa-pen"></i>
+                      </span>
+                      <span
+                        className="icons"
+                        className=" ml-4"
+                        onClick={() => dispatch(deleteTask(task.id))}
+                      >
+                        <i class="fas fa-trash"></i>
+                      </span>
+                    </td>
+                  </tr>
+                );
+              })}
         </tbody>
       </Table>
     </div>
