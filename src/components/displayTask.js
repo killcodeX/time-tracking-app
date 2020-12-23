@@ -55,13 +55,13 @@ export default function DisplayTask() {
                     <td>{task.tag}</td>
                     <td>00 : 00 : 00 - {task.timeStamp}</td>
                     <td>
-                      <span
+                      {/* <span
                         className="icons"
                         href="#"
                         onClick={() => alert("hi")}
                       >
                         <i class="fas fa-pen"></i>
-                      </span>
+                      </span> */}
                       <span
                         className="icons"
                         className=" ml-4"
