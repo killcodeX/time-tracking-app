@@ -27,4 +27,4 @@ http://localhost:3000
 You can also check the demo on [Time Tracking App](https://time-tracking-app-react.netlify.app)
 
 ## ScreenShots
-![Time Tracking](https://github.com/killcodeX/spaceXhistory/blob/master/public/spaceship.png)
+![Time Tracking](https://github.com/killcodeX/spaceXhistory/blob/master/public/screen.png)
